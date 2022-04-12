@@ -1,0 +1,9 @@
+<h1>Result</h1>
+<% if @word_is_valid == false %>
+  <p>Sorry but <strong><%= @word_submitted %></strong> can't be build out of <%= @letters.split('').join(', ') %></p>
+<% elsif @word_is_english == false %>
+  <p>Sorry but <strong><%= @word_submitted %></strong> does not seem to be a valid English word...</p>
+<% else %>
+  <p><strong>Congratulations! </strong><%= @word_submitted %> is a valid English word!</p>
+<% end %>
+<%= link_to 'Play again', new_path %>
